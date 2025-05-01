@@ -1,30 +1,58 @@
+
 :root {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color: #0f172a;
-  background-color: #f8fafc;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Global variables to be defined here */
+  /* --color-white: #ffffff; */
+  --color-white: #ffffff;
+  --primary1: #9785BA;
+  --primary2: #AF9FCD;
+  --secondary: #D7C7F4;
+  --gradient: linear-gradient(180deg, #FFFFFF 0%, #9785BA 100%);
+  --color-black: #3C3C3C;
 }
 
-* {
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
-
-body {
+* {
   margin: 0;
-  padding: 0;
-  min-width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
 }
-
-#root {
-  width: 100%;
-  height: 100vh;
+html,
+body {
+  height: 100%;
+  font-family: "Ubuntu", "Open Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  /* background: linear-gradient(180deg, rgba(215, 199, 244, 0.2) 0%, rgba(151, 133, 186, 0.2) 100%); */
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
 }

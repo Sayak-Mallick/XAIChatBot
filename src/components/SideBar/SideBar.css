@@ -1,0 +1,71 @@
+
+.SideBar{
+    width: 208px;
+    background-color: var(--color-white);
+}
+
+.SideBar-large{
+    display: none;
+}
+
+.SideBar-small{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.closeSideBarButton{
+    position: absolute;
+    left: 100%;
+    top: 0.5rem;
+    width: 32px;
+    margin-left: 0.5rem;
+}
+.sideBarHead{
+    height: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--secondary);
+    cursor: pointer;
+}
+
+.sideBarHead h2{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.appLogo{
+    height: 36px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+.penIcon{
+    width: 24px;
+}
+
+.sideBarBody{
+}
+
+.SideBar button{
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* screen above 600px */
+@media screen and (min-width: 750px) {
+    .SideBar-large{
+        display: block;
+    }
+    
+    .SideBar-small{
+        display: none;
+    }
+}

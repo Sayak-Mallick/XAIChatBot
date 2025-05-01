@@ -1,0 +1,22 @@
+
+
+.Form-wrapper{
+    display: flex;
+    gap: 1rem;
+}
+
+.Form{
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+}
+
+.Form input{
+    outline: none;
+    text-decoration: none;
+    border: 1px solid #00000067;
+    border-radius: 4px;
+    width: 100px;
+    flex: 1;
+    flex-shrink: 2;
+}

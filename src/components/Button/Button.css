@@ -1,0 +1,43 @@
+
+.Button{
+    border: none;
+    text-decoration: none;
+    outline: none;
+    width: 60px;
+    height: 41px;
+    font-weight: 400;
+    border-radius: 5px;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.ButtonTheme-light{
+    color: var(--color-black);
+    background-color: var(--secondary);
+}
+
+
+.ButtonTheme-dark{
+    color: var(--color-white);
+    background-color: var(--primary1);
+}
+
+.pastConvo{
+    width: 90% !important;
+    font-size: 16px !important;
+    font-weight: 700;
+}
+
+
+
+/* screen above 600px */
+@media screen and (min-width: 600px) {
+    .Button{
+        font-size: 20px;
+        width: 73.82px;
+        height: 41px;
+    }
+}
