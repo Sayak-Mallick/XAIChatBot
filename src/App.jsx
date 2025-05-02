@@ -1,52 +1,54 @@
-import { useEffect, useState } from 'react';
-//styles
+import { useState } from 'react'
 import './App.css'
-//contexts
-import { ThemeContext } from './AllContexts';
-//components
-import SideBar from './components/SideBar/SideBar';
-import AppBody from './components/AppBody/AppBody';
-import { updateByLikeDislike } from './functions/functions';
-//assets
-import likeOutlinedIcon from "../src/assets/like-outline-black.svg";
-import dislikeOutlinedIcon from "../src/assets/dislike-outline-black.svg";
-import likeFilledIcon from "../src/assets/like-filled-black.svg";
-import dislikeFilledIcon from "../src/assets/dislike-filled-black.svg";
-
 
 function App() {
-  //states
-  const [theme, setTheme] = useState("light");
-  const [sidebarON, setSideBarON] = useState(false);
-  const [currentChat, setCurrentChat] = useState([]);
-  const [pastConvo, setPastConvo] = useState(false);
+  const [messages, setMessages] = useState([])
+  const [input, setInput] = useState('')
 
-  //variables
-  const iconsData = {likeOutlinedIcon, dislikeOutlinedIcon, likeFilledIcon, dislikeFilledIcon};
-  //functions
-  const handleSideBar = () => setSideBarON(!sidebarON);
-  const newChatClick = () => {
-    //save current chat to pastConversations
-    //setCurrentChat to empty []
-    setCurrentChat([]);
-    setPastConvo(false);
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (input.trim() === '') return
+
+    // Add user message
+    setMessages([...messages, { text: input, sender: 'user' }])
+    
+    // Simulate bot response (replace with actual API call in production)
+    setTimeout(() => {
+      setMessages(prev => [...prev, { text: `Response to: "${input}"`, sender: 'bot' }])
+    }, 500)
+    
+    setInput('')
   }
-  const addChatMsg = (userMsg, botReply) => {
-    setCurrentChat([...currentChat, userMsg, botReply]);
-  }
-  const clearCurrentChat = () => setCurrentChat([]);
-  const handlePastConvo = () => setPastConvo(!pastConvo);
-  const likeDislikeReply = (chatCardId, reaction) => setCurrentChat(updateByLikeDislike(chatCardId, reaction, currentChat, iconsData));
-  
+
   return (
-    <>
-    <ThemeContext.Provider value={[theme, setTheme]}>
-      <main>
-        <SideBar newChatClick={newChatClick} handleSideBar={handleSideBar} sidebarON={sidebarON} handlePastConvo={handlePastConvo}/>
-        <AppBody likeDislikeReply={likeDislikeReply} pastConvo={pastConvo} clearCurrentChat={clearCurrentChat} addChatMsg={addChatMsg} currentChat={currentChat} handleSideBar={handleSideBar} sidebarON={sidebarON}/>
-      </main>
-    </ThemeContext.Provider>
-    </>
+    <div className="chat-container">
+      <div className="chat-header">
+        <h1>Bot AI</h1>
+      </div>
+      
+      <div className="messages-container">
+        {messages.length === 0 ? (
+          <div className="empty-state">Send a message to start chatting with Bot AI</div>
+        ) : (
+          messages.map((message, index) => (
+            <div key={index} className={`message ${message.sender}`}>
+              {message.text}
+            </div>
+          ))
+        )}
+      </div>
+      
+      <form onSubmit={handleSubmit} className="input-form">
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Message Bot AI..."
+          className="message-input"
+        />
+        <button type="submit" className="send-button">Send</button>
+      </form>
+    </div>
   )
 }
 
