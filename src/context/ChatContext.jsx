@@ -3,16 +3,33 @@ import sampleData from '../data/sampleData.json';
 
 const ChatContext = createContext();
 
+// Key for storing conversations in localStorage
+const STORAGE_KEY = 'botai_conversations';
+
 export const ChatProvider = ({ children }) => {
   const [conversations, setConversations] = useState([]);
   const [currentConversation, setCurrentConversation] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Load conversations from sample data
-    setConversations(sampleData.conversations);
+    // Try to load conversations from localStorage first
+    const savedConversations = localStorage.getItem(STORAGE_KEY);
+
+    if (savedConversations) {
+      setConversations(JSON.parse(savedConversations));
+    } else {
+      // Fallback to sample data if nothing in localStorage
+      setConversations(sampleData.conversations);
+    }
     setLoading(false);
   }, []);
+
+  // Save conversations to localStorage whenever they change
+  useEffect(() => {
+    if (conversations.length > 0) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(conversations));
+    }
+  }, [conversations]);
 
   const startNewConversation = () => {
     const newConversation = {
