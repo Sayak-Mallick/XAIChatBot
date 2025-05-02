@@ -1,58 +1,79 @@
-
 :root {
-  /* Global variables to be defined here */
-  /* --color-white: #ffffff; */
-  --color-white: #ffffff;
-  --primary1: #9785BA;
-  --primary2: #AF9FCD;
-  --secondary: #D7C7F4;
-  --gradient: linear-gradient(180deg, #FFFFFF 0%, #9785BA 100%);
-  --color-black: #3C3C3C;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
 }
-* {
+a:hover {
+  color: #535bf2;
+}
+
+body {
   margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
 }
-html,
-body {
-  height: 100%;
-  font-family: "Ubuntu", "Open Sans", sans-serif;
-  scroll-behavior: smooth;
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
 }
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  /* background: linear-gradient(180deg, rgba(215, 199, 244, 0.2) 0%, rgba(151, 133, 186, 0.2) 100%); */
+
+h2 {
+  font-size: 2em;
 }
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
+
+h3 {
+  font-size: 1.5em;
 }
-input,
-button,
-textarea,
-select {
-  font: inherit;
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
 }
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
+button:hover {
+  border-color: #646cff;
 }
-#root,
-#__next {
-  isolation: isolate;
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2em;

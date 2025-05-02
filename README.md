@@ -1,27 +1,12 @@
-# BOT AI - Chat Application with Fake AI Model
+# React + Vite
 
-![Screenshot of App](./src/assets/Screenshot1.png)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## The App
+Currently, two official plugins are available:
 
-**Crio Code-A-Thon Project:** Implementation of a React-based web application  where the user can chat with an AI model. 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Expanding the ESLint configuration
 
-## Features:
--  The user is able to give some feedback at each stage of the conversation.
-- The user is able to like/dislike the AI model's answer using the thumbs up/thumbs down buttons. These buttons are hidden and float when the mouse hovers over the AI model's response.
-- The user is able to have multiple such conversations.
-- Once the user is done having that conversation, the chat gets saved. This chat can be revisited from a panel on the side/top bar.
-- A custom JSON file is used to mock AI model response which includes the response for a particular question.
-
-
-## Tech Used
-
-`HTML`
-`CSS`
-`REACT JS`
-
-
-- <a href="https://bot-ai-ecru.vercel.app/" target="_blank">Click here for demo</a>
-
-**Had fun building!** 🚀
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
