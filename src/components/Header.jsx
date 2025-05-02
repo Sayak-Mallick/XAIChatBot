@@ -31,7 +31,8 @@ const Header = () => {
               color: !isHistory ? '#646cff' : 'white',
               textDecoration: 'none',
               fontWeight: !isHistory ? 'bold' : 'normal'
-            }}>
+            }}
+              data-testid="chat-link">
               Chat
             </Link>
           </li>
@@ -40,18 +41,23 @@ const Header = () => {
               color: isHistory ? '#646cff' : 'white',
               textDecoration: 'none',
               fontWeight: isHistory ? 'bold' : 'normal'
-            }}>
+            }}
+              data-testid="history-link">
               Past Conversations
             </Link>
           </li>
           <li>
-            <Link to="/" onClick={() => startNewConversation()} style={{
-              color: 'white',
-              textDecoration: 'none',
-              backgroundColor: '#646cff',
-              padding: '0.3rem 0.8rem',
-              borderRadius: '4px'
-            }}>
+            <Link to="/"
+              onClick={() => startNewConversation()}
+              style={{
+                color: 'white',
+                textDecoration: 'none',
+                backgroundColor: '#646cff',
+                padding: '0.3rem 0.8rem',
+                borderRadius: '4px'
+              }}
+              data-testid="new-chat-button"
+            >
               New Chat
             </Link>
           </li>

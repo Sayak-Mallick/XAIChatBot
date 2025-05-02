@@ -69,8 +69,7 @@ const FeedbackForm = ({ conversationId }) => {
         </div>
 
         <button
-          type="button"
-          onClick={handleSubmit}
+          type="submit"
           style={{
             padding: '0.6em 1.2em',
             fontSize: '1em',

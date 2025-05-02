@@ -30,8 +30,9 @@ const HistoryPage = () => {
       margin: '0 auto',
       padding: '1rem',
       width: '100%'
-    }}>
-      <h2>Conversation History</h2>
+    }}
+      data-testid="history-container">
+      <h2>Past Conversations</h2>
 
       <div style={{ marginTop: '2rem' }}>
         {conversations.length === 0 ? (
@@ -40,6 +41,7 @@ const HistoryPage = () => {
           conversations.map(conversation => (
             <div
               key={conversation.id}
+              data-testid="conversation-item"
               style={{
                 backgroundColor: '#2c2c2c',
                 borderRadius: '8px',
@@ -74,7 +76,8 @@ const HistoryPage = () => {
                   padding: '0.5rem',
                   borderRadius: '4px',
                   fontSize: '0.9rem'
-                }}>
+                }}
+                  data-testid="message-preview">
                   <strong>Last message:</strong> {conversation.messages[conversation.messages.length - 1].text.substring(0, 50)}
                   {conversation.messages[conversation.messages.length - 1].text.length > 50 ? '...' : ''}
                 </div>

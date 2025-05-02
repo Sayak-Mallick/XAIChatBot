@@ -33,10 +33,10 @@ export const ChatProvider = ({ children }) => {
 
   // Save conversations to localStorage whenever they change
   useEffect(() => {
-    if (conversations.length > 0) {
+    if (!loading && conversations.length > 0) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(conversations));
     }
-  }, [conversations]);
+  }, [conversations, loading]);
 
   const startNewConversation = () => {
     const newConversation = {
@@ -62,9 +62,9 @@ export const ChatProvider = ({ children }) => {
 
     // Look for predefined answers first
     let botResponse;
-    if (!text.trim()) {
+    if (text.trim() === "") {
       botResponse = "Sorry, Did not understand your query!";
-    } else if (predefinedAnswers[text]) {
+    } else if (Object.prototype.hasOwnProperty.call(predefinedAnswers, text)) {
       botResponse = predefinedAnswers[text];
     } else {
       botResponse = "Sorry, Did not understand your query!";
@@ -73,14 +73,14 @@ export const ChatProvider = ({ children }) => {
     // Simulate bot response
     setTimeout(() => {
       addMessageToConversation(currentConversation.id, 'bot', botResponse);
-    }, 1000);
+    }, 500); // Reduced time for faster test execution
   };
 
   const addMessageToConversation = (conversationId, sender, text) => {
     const updatedConversations = conversations.map(conv => {
       if (conv.id === conversationId) {
         const newMessage = {
-          id: conv.messages.length + 1,
+          id: Date.now(), // Use timestamp for unique ID
           sender,
           text,
           timestamp: new Date().toISOString()

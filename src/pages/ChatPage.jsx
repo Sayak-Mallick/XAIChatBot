@@ -23,20 +23,23 @@ const ChatPage = () => {
   }
 
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      height: 'calc(100vh - 64px)',
-      maxWidth: '1280px',
-      margin: '0 auto',
-      width: '100%'
-    }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        height: 'calc(100vh - 64px)',
+        maxWidth: '1280px',
+        margin: '0 auto',
+        width: '100%'
+      }}
+      data-testid="chat-container"
+    >
       <div style={{
         padding: '1rem',
         borderBottom: '1px solid #444',
         backgroundColor: '#1a1a1a'
       }}>
-        <h2>{currentConversation.title}</h2>
+        <h2 data-testid="chat-title">{currentConversation.title}</h2>
       </div>
 
       <div style={{
@@ -45,7 +48,9 @@ const ChatPage = () => {
         padding: '1rem',
         display: 'flex',
         flexDirection: 'column'
-      }}>
+      }}
+        data-testid="messages-container"
+      >
         {currentConversation.messages.length === 0 ? (
           <div style={{
             textAlign: 'center',

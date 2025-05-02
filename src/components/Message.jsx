@@ -30,7 +30,7 @@ const Message = ({ message, conversationId }) => {
         marginBottom: '0.5rem',
         color: message.sender === 'user' ? 'rgba(255, 255, 255, 0.8)' : '#888'
       }}>
-        {message.sender === 'user' ? 'You' : <span>Soul AI</span>}
+        {message.sender === 'user' ? 'You' : <span data-testid="bot-label">Soul AI</span>}
       </div>
 
       {message.sender === 'bot' ? (
