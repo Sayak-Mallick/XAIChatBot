@@ -6,6 +6,13 @@ const ChatContext = createContext();
 // Key for storing conversations in localStorage
 const STORAGE_KEY = 'botai_conversations';
 
+// Dictionary of predefined questions and answers
+const predefinedAnswers = {
+  "Can you explain RESTful APIs?": "RESTful APIs are designed around the REST (Representational State Transfer) architecture, which uses HTTP requests to access and manipulate data. They follow a stateless, client-server, cacheable communications protocol.",
+  "What can you tell me about React?": "React is a JavaScript library for building user interfaces. It was developed by Facebook and is widely used for creating interactive web applications.",
+  "How do I use useState in React?": "useState is a React Hook that lets you add state to functional components. The hook takes an initial state value as an argument and returns an array with the current state value and a function to update it."
+};
+
 export const ChatProvider = ({ children }) => {
   const [conversations, setConversations] = useState([]);
   const [currentConversation, setCurrentConversation] = useState(null);
@@ -53,12 +60,13 @@ export const ChatProvider = ({ children }) => {
 
     addMessageToConversation(currentConversation.id, 'user', text);
 
+    // Look for predefined answers first
+    const botResponse = text.trim()
+      ? (predefinedAnswers[text] || `This is a response to: "${text}"`)
+      : "Sorry, Did not understand your query!";
+
     // Simulate bot response
     setTimeout(() => {
-      const botResponse = text.trim() ?
-        `This is a response to: "${text}"` :
-        "Sorry, Did not understand your query!";
-
       addMessageToConversation(currentConversation.id, 'bot', botResponse);
     }, 1000);
   };
