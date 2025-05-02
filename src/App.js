@@ -1,19 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ChatPage from './pages/ChatPage';
-import HistoryPage from './pages/HistoryPage';
+import ChatInterface from './components/ChatInterface';
+import History from './pages/History';
 import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <header className="header">
-          <h1>Bot AI</h1>
-        </header>
         <Routes>
-          <Route path="/" element={<ChatPage />} />
-          <Route path="/history" element={<HistoryPage />} />
+          <Route path="/" element={<ChatInterface />} />
+          <Route path="/history" element={<History />} />
         </Routes>
       </div>
     </Router>
