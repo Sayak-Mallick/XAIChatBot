@@ -57,6 +57,7 @@ const Message = ({ message, conversationId }) => {
               color: message.feedback?.liked === true ? '#4CAF50' : '#fff',
               padding: '2px'
             }}
+            aria-label="Like response"
           >
             👍
           </button>
@@ -69,6 +70,7 @@ const Message = ({ message, conversationId }) => {
               color: message.feedback?.liked === false ? '#F44336' : '#fff',
               padding: '2px'
             }}
+            aria-label="Dislike response"
           >
             👎
           </button>

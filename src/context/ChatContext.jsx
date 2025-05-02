@@ -61,9 +61,14 @@ export const ChatProvider = ({ children }) => {
     addMessageToConversation(currentConversation.id, 'user', text);
 
     // Look for predefined answers first
-    const botResponse = text.trim()
-      ? (predefinedAnswers[text] || `This is a response to: "${text}"`)
-      : "Sorry, Did not understand your query!";
+    let botResponse;
+    if (!text.trim()) {
+      botResponse = "Sorry, Did not understand your query!";
+    } else if (predefinedAnswers[text]) {
+      botResponse = predefinedAnswers[text];
+    } else {
+      botResponse = "Sorry, Did not understand your query!";
+    }
 
     // Simulate bot response
     setTimeout(() => {
