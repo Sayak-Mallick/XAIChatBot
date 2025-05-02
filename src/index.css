@@ -77,3 +77,14 @@ button:focus-visible {
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 2em;
+  }
+  h2 {
+    font-size: 1.75em;
+  }
+  h3 {
+    font-size: 1.25em;
+  }
+  .app-container {
+    padding: 0;
+  }
+}
