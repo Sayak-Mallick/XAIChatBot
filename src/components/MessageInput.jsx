@@ -29,7 +29,7 @@ const MessageInput = () => {
         type="text"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        placeholder="Message Bot AI…"
+        placeholder="Message Bot AI..."
         data-testid="message-input"
         style={{
           flex: 1,
