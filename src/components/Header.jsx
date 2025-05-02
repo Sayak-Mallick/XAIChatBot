@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useChat } from '../context/ChatContext';
 
 const Header = () => {
   const location = useLocation();
   const isHistory = location.pathname === '/history';
+  const { startNewConversation } = useChat();
 
   return (
     <header style={{
@@ -40,6 +42,17 @@ const Header = () => {
               fontWeight: isHistory ? 'bold' : 'normal'
             }}>
               Past Conversations
+            </Link>
+          </li>
+          <li>
+            <Link to="/" onClick={() => startNewConversation()} style={{
+              color: 'white',
+              textDecoration: 'none',
+              backgroundColor: '#646cff',
+              padding: '0.3rem 0.8rem',
+              borderRadius: '4px'
+            }}>
+              New Chat
             </Link>
           </li>
         </ul>
