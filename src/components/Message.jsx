@@ -34,7 +34,7 @@ const Message = ({ message, conversationId }) => {
       </div>
 
       {message.sender === 'bot' ? (
-        <p style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{message.text}</p>
+        <p data-testid="bot-message" style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{message.text}</p>
       ) : (
         <div style={{ margin: 0, whiteSpace: 'pre-wrap' }}>{message.text}</div>
       )}
