@@ -23,12 +23,14 @@ const MessageInput = () => {
         borderTop: '1px solid #444',
         backgroundColor: '#1a1a1a'
       }}
+      data-testid="message-form"
     >
       <input
         type="text"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Message Bot AI…"
+        data-testid="message-input"
         style={{
           flex: 1,
           padding: '0.6em 1.2em',
@@ -41,6 +43,7 @@ const MessageInput = () => {
       />
       <button
         type="submit"
+        data-testid="send-button"
         style={{
           padding: '0.6em 1.2em',
           fontSize: '1em',
