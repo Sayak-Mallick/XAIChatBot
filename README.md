@@ -1,78 +1,12 @@
-# AI Chat Application
+# React + Vite
 
-## Overview
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-This is a simple ReactJS web application that allows users to chat with an AI model and provide feedback on the responses. Users can like/dislike responses, rate the conversation, and leave subjective feedback. The app also allows users to revisit past conversations and view aggregated feedback.
+Currently, two official plugins are available:
 
-## Features
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- Chat interface with AI responses
-- Feedback mechanism with thumbs up/down buttons
-- Rating system at the end of the conversation (1-5)
-- Subjective feedback input
-- View past conversations and feedback
-- Filter feedback based on ratings
-- Light/Dark mode toggle (Bonus)
+## Expanding the ESLint configuration
 
-## Tech Stack
-
-- **Frontend**: ReactJS
-- **UI Library**: Material-UI
-- **Routing**: React Router
-- **State Management**: React State / Context API
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm (v5.6 or higher)
-
-## Installation
-
-To run this project locally, follow these steps:
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/MayurDange15/BOT-AI.git
-   cd BOT-AI
-   ```
-
-2. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-
-   ```bash
-   npm start
-   ```
-
-4. Open your browser and navigate to `http://localhost:3000`.
-
-## Using the Application
-
-1. Start a conversation by typing your message in the input box.
-2. Hover over the AI response to see thumbs up/down buttons for feedback.
-3. Rate the conversation out of 5 at the end.
-4. Leave subjective feedback in the provided text area.
-5. Access past conversations from the sidebar.
-6. View and filter feedback based on ratings.
-
-## Technical Choices
-
-- **ReactJS**: Chosen for its component-based architecture, making it easy to build reusable UI components.
-- **Material-UI**: Used for a consistent and responsive design, providing ready-to-use components.
-- **React Router**: Implemented for easy navigation between different views of the application.
-- **State Management**: Utilized React's built-in state management for simplicity and ease of integration.
-
-## Contributing
-
-If you'd like to contribute to this project, please fork the repository and submit a pull request with your changes.
-
-## Contact
-
-For any questions or suggestions, please contact [Mayur](mailto:mayurdange15081996@gmail.com).
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

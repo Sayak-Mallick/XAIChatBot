@@ -1,0 +1,52 @@
+{
+  "conversations": [
+    {
+      "id": 1,
+      "title": "Conversation 1",
+      "messages": [
+        {
+          "id": 1,
+          "sender": "user",
+          "text": "What can you tell me about React?",
+          "timestamp": "2023-05-10T08:30:00.000Z"
+        },
+        {
+          "id": 2,
+          "sender": "bot",
+          "text": "React is a JavaScript library for building user interfaces. It was developed by Facebook and is widely used for creating interactive web applications.",
+          "timestamp": "2023-05-10T08:30:05.000Z",
+          "feedback": {
+            "liked": true,
+            "comment": ""
+          }
+        }
+      ],
+      "rating": 4,
+      "feedback": "The information was helpful and accurate."
+    },
+    {
+      "id": 2,
+      "title": "Conversation 2",
+      "messages": [
+        {
+          "id": 1,
+          "sender": "user",
+          "text": "How do I use useState in React?",
+          "timestamp": "2023-05-11T10:15:00.000Z"
+        },
+        {
+          "id": 2,
+          "sender": "bot",
+          "text": "useState is a React Hook that lets you add state to functional components. The hook takes an initial state value as an argument and returns an array with the current state value and a function to update it.",
+          "timestamp": "2023-05-11T10:15:07.000Z",
+          "feedback": {
+            "liked": true,
+            "comment": ""
+          }
+        }
+      ],
+      "rating": 5,
+      "feedback": "Very clear explanation!"
+    }
+  ]
+}
